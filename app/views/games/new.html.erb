@@ -1,0 +1,10 @@
+<% @letters.each do |letter| %>
+  <%= letter %>
+<% end %>
+
+<form action="score" method="post">
+  <input type="text" name="word">
+  <input type="submit" value="Ask!">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :grid, @letters %>
+</form>
